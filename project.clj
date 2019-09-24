@@ -20,7 +20,11 @@
              :debug {:dependencies [[log4j/log4j "1.2.17"]]}}
   :aliases {"example" ["trampoline" "with-profile" "example" "run" "-m"]
             "exdebug" ["trampoline" "with-profile" "example,debug" "run" "-m"]}
-  :deploy-repositories [["clojars" {:creds :gpg}]]
+  :deploy-repositories [["clojars" {:creds :gpg}]
+                        ["internal" {:url "http://54.174.168.124:8080/repository/internal"
+                                     :username "admin"
+                                     :password "qu1ntyp3@j@rs@adm1n"
+                                     :sign-releases false}]]
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/data.codec "0.1.0"]
                  [crypto-random "1.2.0"]
