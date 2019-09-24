@@ -1,7 +1,7 @@
 (ns qarth.core
   "Core NS for Qarth. Right now this is just some support
   for qarth.oauth and implementations."
-  (use slingshot.slingshot))
+  (:use slingshot.slingshot))
 
 (defn unauthorized
   "Throw an unauthorized Slingshot exception.

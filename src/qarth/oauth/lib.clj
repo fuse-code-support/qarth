@@ -1,13 +1,13 @@
 (ns qarth.oauth.lib
   "Helper fns for OAuth implementations."
-  (require (qarth [core :as core])
-           clj-http.client
-           cheshire.core
-           ring.util.codec
-           clojure.data.codec.base64
-           [clojure.tools.logging :as log]
-           [clojure.java.io :as io]
-           clojure.string))
+  (:require (qarth [core :as core])
+            clj-http.client
+            cheshire.core
+            ring.util.codec
+            clojure.data.codec.base64
+            [clojure.tools.logging :as log]
+            [clojure.java.io :as io]
+            clojure.string))
 
 (defn csrf-token
     "Returns a random base-64 encoded 12-byte CSRF token."
@@ -172,7 +172,7 @@
 
   The parser should return a map containing at least the key :access-token
   and the optional key :expires-in. All keys will be added to the record.
-  
+
   service -- the auth service
   record -- the auth record
   code -- the auth code

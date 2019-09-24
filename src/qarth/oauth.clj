@@ -1,8 +1,8 @@
 (ns qarth.oauth
   "Base fns for OAuth and OAuth-style interactive auth services.
   You can also define your own auth implementations--see the docs."
-  (require [qarth.support :as s]
-           [qarth.oauth.lib :as lib])
+  (:require [qarth.support :as s]
+            [qarth.oauth.lib :as lib])
   (:refer-clojure :exclude [derive]))
 
 (defn derive
@@ -13,7 +13,7 @@
 (derive :oauth)
 (derive :multi :oauth)
 
-(defmulti build 
+(defmulti build
   "Multimethod. Usage:
   (build {:type type :api-key my-key :api-secret my-secret ...})
 
@@ -25,10 +25,10 @@
   Usually required for OAuth:
   :api-key -- your API key. the [type, api-key] pair uniquely identifies a service
   :api-secret -- your API secret
-  
+
   Implementations may accept other fields also, such as the following:
   :callback -- a callback URL for interactive browser logins
-  
+
   Auth services contain secret information, like api secret keys.
   Be careful if about writing or serializing them."
   s/type-first :hierarchy s/h)
@@ -129,7 +129,7 @@
 
   If an exceptional status code happens, throws an Exception instead.
   Other implementations might support more opts and return more stuff.
-  
+
   A default implementation is provided for implementors. It adds the param
   :access_token to the form params if it's a POST, and the query if it's a GET."
   s/type-first :hierarchy s/h)

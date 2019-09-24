@@ -2,9 +2,9 @@
   "Low-level Ring fns to use with Qarth.
   This lib is in a state of flux,
   so you probably shouldn't refer to it in your code."
-  (require (qarth [oauth :as oauth] [core :as core])
-           ring.util.response
-           [clojure.tools.logging :as log])
+  (:require (qarth [oauth :as oauth] [core :as core])
+            ring.util.response
+            [clojure.tools.logging :as log])
   (:refer-clojure :exclude [get set update]))
 
 (defn new-record-redirect-handler
@@ -146,7 +146,7 @@
         (if (oauth/active? service record)
           (success-handler req)
           (callback-handler req))
-        (try 
+        (try
           (new-record-handler req)
           (catch Exception e
             (exception-handler req e)))))))

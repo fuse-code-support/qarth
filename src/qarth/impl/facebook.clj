@@ -1,9 +1,9 @@
 (ns qarth.impl.facebook
   "A Facebook oauth impl. Type is :facebook."
-  (require (qarth [oauth :as oauth])
-           [qarth.oauth.lib :as lib]
-           qarth.impl.oauth-v2
-           cheshire.core))
+  (:require (qarth [oauth :as oauth])
+            [qarth.oauth.lib :as lib]
+            qarth.impl.oauth-v2
+            cheshire.core))
 
 (oauth/derive :facebook :oauth)
 

@@ -1,9 +1,9 @@
 (ns qarth.impl.oauth-v2
   "A generic OAuth v2 implementation. Services should have the keys
   :request-url and :access-url. Assumes form-encoded responses."
-  (require (qarth [oauth :as oauth] core)
-           [qarth.oauth.lib :as lib]
-           clj-http.client))
+  (:require (qarth [oauth :as oauth] core)
+            [qarth.oauth.lib :as lib]
+            clj-http.client))
 
 (defmethod oauth/build :oauth [x] x)
 

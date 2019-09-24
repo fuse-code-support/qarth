@@ -1,6 +1,6 @@
 (ns qarth.support
   "Support fns for qarth, for implementing or extending behavior."
-  (require crypto.random))
+  (:require crypto.random))
 
 (def ^{:doc "The OAuth hierarchy ref."}
   h

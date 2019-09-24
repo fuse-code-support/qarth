@@ -1,9 +1,9 @@
 (ns qarth.impl.twitter
   "A Twitter oauth impl. Type is :twitter."
-  (require (qarth [oauth :as oauth])
-           [qarth.oauth.lib :as lib]
-           qarth.impl.scribe
-           cheshire.core))
+  (:require (qarth [oauth :as oauth])
+            [qarth.oauth.lib :as lib]
+            qarth.impl.scribe
+            cheshire.core))
 
 (qarth.impl.scribe/extend-scribe :twitter :scribe-v1
                                  org.scribe.builder.api.TwitterApi$SSL)
